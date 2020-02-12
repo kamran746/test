@@ -6,10 +6,10 @@
 using namespace std;
 
 
-
 string remove_comments(const string& fname)
 {
     char buf[1024];
+
     string cmd = "gcc -fpreprocessed -dD -E " + fname;
     string str;
     std::unique_ptr<FILE, decltype(&pclose)> pipe(popen(cmd.c_str(),"r"),pclose);
